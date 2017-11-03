@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>	Movie App </title>
+	
+	<% include head %>
+
+	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// console.log("Doc is ready")
+			// $.getJSON(url,()=>{
+				// $('#movie').val();
+			// })
+		})
+		// $.getJSON(url)
+		// $.ajax({
+		// 	method: 'get',
+		// 	data: data,
+		// 	successCallback: ()=>{
+		// 	}
+		// })
+		// $.ajax({
+		//   dataType: "json",
+		//   url: url,
+		//   data: data,
+		//   success: success,
+		//   method: "post"
+		// });		
+		// myApp = angular.module('myApp',[]);
+		// myApp.controller('myController',function($scope){
+		// 	$scope.test = "THI IS A TEST!!!"
+		// })
+	</script>
+
+
+</head>
+<body ng-controller="myController">
+
+	<% include navbar %>
+
+	<!-- <li ng-model="test">{{test}}</li> -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1><%=message%></h1>
+
+<!-- 			<% var a="<h1>This is an H1</h1>"; %>
+				<%- a %>
+				<%= a %> -->
+				<!-- %= is like $('body').text() -->
+				<!-- %- is like $('body').html() -->
+				<!-- <input type="text" name="haha" /> -->
+			</div>
+<!-- 		If I do < % without an = sign, it means RUN THIS
+		If I do < %= it means, PRINT this to the window.document -->
+			<div class="col-sm-12">
+				<% for(let i = 0; i < parsedData.length; i++){ %>
+					<div class="col-sm-3">
+						<a href="/movie/<%=parsedData[i].id%>">
+							<img src="<%= imageBaseUrl + parsedData[i].poster_path %>" />
+						</a>
+					</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
